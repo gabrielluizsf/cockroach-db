@@ -7,7 +7,7 @@ import (
 	"github.com/GabrielLuizSF/cockroach-db/database/migrations"
 	"github.com/GabrielLuizSF/cockroach-db/database/utils/errors/fatal"
 	"github.com/GabrielLuizSF/cockroach-db/database/utils/errors/connection"	
-	"github.com/joho/godotenv"
+	//"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	
@@ -16,9 +16,9 @@ import (
 var database *gorm.DB;
 
 func Conect(){
-    
-	err := godotenv.Load();
-		fatal.PrintFatalError(err,"Error loading .env file");
+
+	//err := godotenv.Load();
+		//fatal.PrintFatalError(err,"Error loading .env file");
 	
 	conectDB := os.Getenv("DATABASE_URI");
 	db, err := gorm.Open(postgres.Open(conectDB), &gorm.Config{});
