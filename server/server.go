@@ -2,7 +2,7 @@ package server
 
 import (
 	"log"
-	//"os"
+	"os"
 	"github.com/GabrielLuizSF/cockroach-db/server/routes"
 	"github.com/gin-gonic/gin"
 
@@ -14,10 +14,10 @@ type Server struct {
 }
 
 func NewServer() Server {
-	localPort := "5000";
-	//serverPort := os.Getenv("PORT");
+//  localPort  :=  5000;
+	serverPort := os.Getenv("PORT");
 	return Server{
-		port:  localPort,
+		port:  serverPort,
 		server: gin.Default(),
 	}
 
