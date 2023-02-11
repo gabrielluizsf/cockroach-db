@@ -1,9 +1,8 @@
 package connection
 
-func CloseConnError(err error)error{
-	if err != nil {
-		return err
-	}
+import "github.com/theGOURL/warning"
 
-	return nil
+func CloseConnError(err error)error{
+  warning.PRINT_DEFAULT_ERRORS(err,"cannot close database connection");
+  	return nil;
 }
